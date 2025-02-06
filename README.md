@@ -9,11 +9,9 @@
 > This repository includes a pre-compiled binary of XCStringsGen to avoid compilation, reduce build times, and simplify dependencies.
 > For developers who want to modify the code, refer to the [source code version](https://github.com/nonasim/XCStringsGenPlugin).
 
-## Table of Contents
+## Motivation
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+Localization using String Catalogs should be seamless, not a source of friction. This tool simplifies working with string catalogs while using familiar terminologies, eliminating the need for additional learning. With a type-safe approach, accessing localized strings becomes intuitive, reducing errors and improving maintainability. Say goodbye to hardcoded keys and manual string management—this tool ensures a smoother, more efficient localization workflow.
 
 ## Installation
 
@@ -21,12 +19,16 @@
 
 1. Open your project in Xcode.
 2. Go to **File** → **Add Package Dependencies...**
-3. Enter the package URL: https://github.com/nonasim/XCStringsGenProPlugin.git
-4. Set the dependency rule (e.g., **Up to Next Major Version**).
+3. Enter the package URL: `https://github.com/nonasim/XCStringsGenProPlugin.git` and set the dependency rule.
+<img width="900" src="https://github.com/user-attachments/assets/48390fef-224f-411a-92df-97f6b7439449" />
+
 5. Click **Add Package** and select the appropriate target.
 6. Add it as a Build Tool Plug-in:
     1. Select appropriate target -> Build Phases
-    2. Expand **Run Build Tool Plug-ins** and use **+** button to add XCStringsGenProPlugin
+    2. Expand **Run Build Tool Plug-ins** and use **+** button to add XCStringsGenPlugin
+<img width="900" src="https://github.com/user-attachments/assets/20d03f70-4803-4bc0-9eaa-22658867840e" />
+
+
 
 ### Option 2: Integrating into your Swift package
 
@@ -50,7 +52,8 @@ dependencies: [
 
 ## Usage
 
-When building the project for the first time after adding the plugin, you may encounter a build error stating "XCStringsGenProPlugin" is disabled. To proceed, click the error in the Issue Navigator, review the plugin, select "Trust & Enable," and then build again.
+When building the project for the first time after adding the plugin, you may encounter a build error stating "XCStringsGenPlugin" is disabled. To proceed, click the error in the Issue Navigator, review the plugin, enable the plugin and then build again.
+<img width="900" src="https://github.com/user-attachments/assets/d5954226-06d9-4b7f-9448-d9402f1890b8" />
 
 Once the build process is complete, you should be able to see the file path through **Report navigator** under **Run custom shell script 'XCStringsGen: Code generation'**. This tells you that the file has been generated and its attributes can be referenced from the code.
 
